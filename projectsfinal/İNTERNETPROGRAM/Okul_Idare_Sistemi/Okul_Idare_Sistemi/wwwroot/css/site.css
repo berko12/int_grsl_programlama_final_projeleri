@@ -1,0 +1,20 @@
+html {
+  font-size: 29px;
+}
+
+@media (min-width: 768px) {
+  html {
+    background-color: blue;
+    font-size: 16px;
+  }
+}
+
+html {
+    background-color: sandybrown;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  margin-bottom: 95px;
+}

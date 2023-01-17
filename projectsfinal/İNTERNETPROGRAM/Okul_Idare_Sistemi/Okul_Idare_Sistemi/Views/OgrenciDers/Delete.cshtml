@@ -1,0 +1,32 @@
+﻿@model Okul_Idare_Sistemi.Models.OgrenciDers
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Öğrenci silme</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ogrenci.AdSoyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ogrenci.AdSoyad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ders.Ad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ders.Ad)
+        </dd>
+        
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        
+    </form>
+</div>

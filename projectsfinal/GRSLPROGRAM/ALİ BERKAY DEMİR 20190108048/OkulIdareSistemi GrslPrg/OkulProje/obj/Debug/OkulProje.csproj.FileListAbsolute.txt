@@ -1,0 +1,76 @@
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\OkulProje.exe.config
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\OkulProje.exe
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\OkulProje.pdb
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\EntityFramework.dll
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.dll
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\EntityFramework.xml
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.xml
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.AssemblyReference.cache
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.SuggestedBindingRedirects.cache
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.Form1.resources
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.Properties.Resources.resources
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.GenerateResource.cache
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CoreCompileInputs.cache
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CopyComplete
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.exe
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.pdb
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciPanel.resources
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.OkulYonetim.resources
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.DersPaneli.resources
+D:\Visual Studio Asp.net Projelerim\Dersler\form\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciDersPanel.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.exe.config
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.exe
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.pdb
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.dll
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.xml
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.AssemblyReference.cache
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.DersPaneli.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.Form1.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciDersPanel.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciPanel.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OkulYonetim.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.Properties.Resources.resources
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.GenerateResource.cache
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CoreCompileInputs.cache
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CopyComplete
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.exe
+C:\Users\mrxsh\Desktop\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.pdb
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.exe.config
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.exe
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\OkulProje.pdb
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.dll
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.xml
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.DersPaneli.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.Form1.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciDersPanel.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciPanel.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.OkulYonetim.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.Properties.Resources.resources
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.GenerateResource.cache
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CopyComplete
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.exe
+C:\Users\acer\Desktop\MASAÜSTÜ\OkulProje\OkulProje\OkulProje\obj\Debug\OkulProje.pdb
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\OkulProje.exe.config
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\OkulProje.exe
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\OkulProje.pdb
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\EntityFramework.dll
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\EntityFramework.xml
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.AssemblyReference.cache
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.DersPaneli.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.Form1.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciDersPanel.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.OgrenciPanel.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.OkulYonetim.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.Properties.Resources.resources
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.GenerateResource.cache
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.csproj.CoreCompileInputs.cache
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.exe
+C:\Users\brkyd\Desktop\OkulProje\OkulProje\obj\Debug\OkulProje.pdb

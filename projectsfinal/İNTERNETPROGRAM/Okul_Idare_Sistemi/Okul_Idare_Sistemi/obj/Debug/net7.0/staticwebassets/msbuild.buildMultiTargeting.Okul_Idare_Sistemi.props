@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Okul_Idare_Sistemi.props" />
+</Project>

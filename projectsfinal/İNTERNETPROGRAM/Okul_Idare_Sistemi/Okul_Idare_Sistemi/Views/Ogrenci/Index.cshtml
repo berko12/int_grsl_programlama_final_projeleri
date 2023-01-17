@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Okul_Idare_Sistemi.Models.Ogrenci>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><font color=brown>ÖĞRENCİ SAYFASI</font></h1>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Ogrenci" asp-action="Create">Öğrenci Ekleme</a>
+
+
+<div class="main-div">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdSoyad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KayitTarih)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OgrenciNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DTarih)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bolum)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdSoyad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KayitTarih)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OgrenciNo)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DTarih)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bolum)
+                    </td>
+
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sil</a> |
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id">Öğrenciyi Güncelle</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,40 @@
+﻿@model Okul_Idare_Sistemi.Models.OkulYonetim
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yönetim Güncelle</h1>
+
+<div class="row">
+    <div class="col-sm-6 text-black">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-outline mb-4">
+                <label asp-for="AdSoyad" class="control-label"></label>
+                <input asp-for="AdSoyad" class="form-control form-control-lg" />
+                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="Gorevi" class="control-label"></label>
+                <input asp-for="Gorevi" class="form-control form-control-lg" />
+                <span asp-validation-for="Gorevi" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="YonetimTip" class="control-label"></label>
+                <input asp-for="YonetimTip" class="form-control form-control-lg" />
+                <span asp-validation-for="YonetimTip" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $("#eventCreateForm").validate();
+    </script>
+}

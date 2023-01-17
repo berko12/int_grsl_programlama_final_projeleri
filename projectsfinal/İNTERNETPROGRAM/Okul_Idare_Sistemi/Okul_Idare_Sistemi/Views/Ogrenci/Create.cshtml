@@ -1,0 +1,50 @@
+﻿@model Okul_Idare_Sistemi.Models.Ogrenci
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>öğrenci Oluşturma</h1>
+
+<div class="row">
+    <div class="col-sm-6 text-black">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-outline mb-4">
+                <label asp-for="AdSoyad" class="control-label"></label>
+                <input asp-for="AdSoyad" class="form-control form-control-lg" />
+                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="KayitTarih" class="control-label"></label>
+                <input asp-for="KayitTarih" asp-format="{0:dd/MM/yyyy}" type="date" class="form-control form-control-lg" />
+                <span asp-validation-for="KayitTarih" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="OgrenciNo" class="control-label"></label>
+                <input asp-for="OgrenciNo" class="form-control form-control-lg" />
+                <span asp-validation-for="OgrenciNo" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="DTarih" class="control-label"></label>
+                <input asp-for="DTarih" asp-format="{0:dd/MM/yyyy}" type="date" class="form-control form-control-lg" />
+                <span asp-validation-for="DTarih" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="Bolum" class="control-label"></label>
+                <input asp-for="Bolum" class="form-control form-control-lg" />
+                <span asp-validation-for="Bolum" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $("#eventCreateForm").validate();
+    </script>
+}

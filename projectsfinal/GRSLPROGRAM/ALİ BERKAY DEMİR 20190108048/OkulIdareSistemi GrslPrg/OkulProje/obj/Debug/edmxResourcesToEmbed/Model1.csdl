@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="okulIdareSisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ois_ders">
+    <Key>
+      <PropertyRef Name="ders_id" />
+    </Key>
+    <Property Name="ders_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ders_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ders_kredi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ders_okulyonetimid" Type="Int16" />
+    <NavigationProperty Name="ois_ogrenciders" Relationship="Self.FK_ois_ders_ois_ogrenciders" FromRole="ois_ders" ToRole="ois_ogrenciders" />
+    <NavigationProperty Name="ois_okulyonetim" Relationship="Self.FK_ois_ders_ois_okulyonetim" FromRole="ois_ders" ToRole="ois_okulyonetim" />
+  </EntityType>
+  <EntityType Name="ois_ogrenci">
+    <Key>
+      <PropertyRef Name="ogrenci_id" />
+    </Key>
+    <Property Name="ogrenci_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenci_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ogrenci_recorddate" Type="DateTime" Precision="3" />
+    <Property Name="ogrenci_birthdate" Type="DateTime" Precision="3" />
+    <Property Name="ogrenci_bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ogrenci_no" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ois_ogrenciders" Relationship="Self.FK_ois_ogrenciders_ois_ogrenci" FromRole="ois_ogrenci" ToRole="ois_ogrenciders" />
+  </EntityType>
+  <EntityType Name="ois_ogrenciders">
+    <Key>
+      <PropertyRef Name="ogrenciders_id" />
+    </Key>
+    <Property Name="ogrenciders_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenciders_dersid" Type="Int16" />
+    <Property Name="ogrenciders_ogrenciid" Type="Int16" />
+    <NavigationProperty Name="ois_ders" Relationship="Self.FK_ois_ders_ois_ogrenciders" FromRole="ois_ogrenciders" ToRole="ois_ders" />
+    <NavigationProperty Name="ois_ogrenci" Relationship="Self.FK_ois_ogrenciders_ois_ogrenci" FromRole="ois_ogrenciders" ToRole="ois_ogrenci" />
+  </EntityType>
+  <EntityType Name="ois_okulyonetim">
+    <Key>
+      <PropertyRef Name="yonetim_id" />
+    </Key>
+    <Property Name="yonetim_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yonetim_adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yonetim_gorev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yonetim_tip" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="ois_ders" Relationship="Self.FK_ois_ders_ois_okulyonetim" FromRole="ois_okulyonetim" ToRole="ois_ders" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_ois_ders_ois_ogrenciders">
+    <End Role="ois_ogrenciders" Type="Self.ois_ogrenciders" Multiplicity="1" />
+    <End Role="ois_ders" Type="Self.ois_ders" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ois_ogrenciders">
+        <PropertyRef Name="ogrenciders_id" />
+      </Principal>
+      <Dependent Role="ois_ders">
+        <PropertyRef Name="ders_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ois_ders_ois_okulyonetim">
+    <End Role="ois_okulyonetim" Type="Self.ois_okulyonetim" Multiplicity="0..1" />
+    <End Role="ois_ders" Type="Self.ois_ders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ois_okulyonetim">
+        <PropertyRef Name="yonetim_id" />
+      </Principal>
+      <Dependent Role="ois_ders">
+        <PropertyRef Name="ders_okulyonetimid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ois_ogrenciders_ois_ogrenci">
+    <End Role="ois_ogrenci" Type="Self.ois_ogrenci" Multiplicity="0..1" />
+    <End Role="ois_ogrenciders" Type="Self.ois_ogrenciders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ois_ogrenci">
+        <PropertyRef Name="ogrenci_id" />
+      </Principal>
+      <Dependent Role="ois_ogrenciders">
+        <PropertyRef Name="ogrenciders_ogrenciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="okulIdareSisEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ois_ders" EntityType="Self.ois_ders" />
+    <EntitySet Name="ois_ogrenci" EntityType="Self.ois_ogrenci" />
+    <EntitySet Name="ois_ogrenciders" EntityType="Self.ois_ogrenciders" />
+    <EntitySet Name="ois_okulyonetim" EntityType="Self.ois_okulyonetim" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_ois_ders_ois_ogrenciders" Association="Self.FK_ois_ders_ois_ogrenciders">
+      <End Role="ois_ogrenciders" EntitySet="ois_ogrenciders" />
+      <End Role="ois_ders" EntitySet="ois_ders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ois_ders_ois_okulyonetim" Association="Self.FK_ois_ders_ois_okulyonetim">
+      <End Role="ois_okulyonetim" EntitySet="ois_okulyonetim" />
+      <End Role="ois_ders" EntitySet="ois_ders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ois_ogrenciders_ois_ogrenci" Association="Self.FK_ois_ogrenciders_ois_ogrenci">
+      <End Role="ois_ogrenci" EntitySet="ois_ogrenci" />
+      <End Role="ois_ogrenciders" EntitySet="ois_ogrenciders" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(okulIdareSisModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(okulIdareSisModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

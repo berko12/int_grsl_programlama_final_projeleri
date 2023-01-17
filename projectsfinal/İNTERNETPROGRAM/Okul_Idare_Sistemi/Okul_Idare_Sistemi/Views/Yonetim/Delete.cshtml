@@ -1,0 +1,38 @@
+﻿@model Okul_Idare_Sistemi.Models.OkulYonetim
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Yçönetim silme</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gorevi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gorevi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YonetimTip)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YonetimTip)
+        </dd>
+        
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+
+    </form>
+</div>

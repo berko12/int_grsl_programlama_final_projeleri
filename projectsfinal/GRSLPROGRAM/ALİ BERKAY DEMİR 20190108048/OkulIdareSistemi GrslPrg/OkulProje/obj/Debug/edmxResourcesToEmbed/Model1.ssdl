@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="okulIdareSisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ois_ders">
+    <Key>
+      <PropertyRef Name="ders_id" />
+    </Key>
+    <Property Name="ders_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ders_ad" Type="varchar" MaxLength="50" />
+    <Property Name="ders_kredi" Type="varchar" MaxLength="50" />
+    <Property Name="ders_okulyonetimid" Type="smallint" />
+  </EntityType>
+  <EntityType Name="ois_ogrenci">
+    <Key>
+      <PropertyRef Name="ogrenci_id" />
+    </Key>
+    <Property Name="ogrenci_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ogrenci_fullname" Type="varchar" MaxLength="50" />
+    <Property Name="ogrenci_recorddate" Type="datetime" />
+    <Property Name="ogrenci_birthdate" Type="datetime" />
+    <Property Name="ogrenci_bolum" Type="varchar" MaxLength="50" />
+    <Property Name="ogrenci_no" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="ois_ogrenciders">
+    <Key>
+      <PropertyRef Name="ogrenciders_id" />
+    </Key>
+    <Property Name="ogrenciders_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ogrenciders_dersid" Type="smallint" />
+    <Property Name="ogrenciders_ogrenciid" Type="smallint" />
+  </EntityType>
+  <EntityType Name="ois_okulyonetim">
+    <Key>
+      <PropertyRef Name="yonetim_id" />
+    </Key>
+    <Property Name="yonetim_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yonetim_adsoyad" Type="varchar" MaxLength="50" />
+    <Property Name="yonetim_gorev" Type="varchar" MaxLength="50" />
+    <Property Name="yonetim_tip" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ois_ders_ois_ogrenciders">
+    <End Role="ois_ogrenciders" Type="Self.ois_ogrenciders" Multiplicity="1" />
+    <End Role="ois_ders" Type="Self.ois_ders" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ois_ogrenciders">
+        <PropertyRef Name="ogrenciders_id" />
+      </Principal>
+      <Dependent Role="ois_ders">
+        <PropertyRef Name="ders_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ois_ders_ois_okulyonetim">
+    <End Role="ois_okulyonetim" Type="Self.ois_okulyonetim" Multiplicity="0..1" />
+    <End Role="ois_ders" Type="Self.ois_ders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ois_okulyonetim">
+        <PropertyRef Name="yonetim_id" />
+      </Principal>
+      <Dependent Role="ois_ders">
+        <PropertyRef Name="ders_okulyonetimid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ois_ogrenciders_ois_ogrenci">
+    <End Role="ois_ogrenci" Type="Self.ois_ogrenci" Multiplicity="0..1" />
+    <End Role="ois_ogrenciders" Type="Self.ois_ogrenciders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ois_ogrenci">
+        <PropertyRef Name="ogrenci_id" />
+      </Principal>
+      <Dependent Role="ois_ogrenciders">
+        <PropertyRef Name="ogrenciders_ogrenciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="okulIdareSisModelStoreContainer">
+    <EntitySet Name="ois_ders" EntityType="Self.ois_ders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ois_ogrenci" EntityType="Self.ois_ogrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ois_ogrenciders" EntityType="Self.ois_ogrenciders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ois_okulyonetim" EntityType="Self.ois_okulyonetim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ois_ders_ois_ogrenciders" Association="Self.FK_ois_ders_ois_ogrenciders">
+      <End Role="ois_ogrenciders" EntitySet="ois_ogrenciders" />
+      <End Role="ois_ders" EntitySet="ois_ders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ois_ders_ois_okulyonetim" Association="Self.FK_ois_ders_ois_okulyonetim">
+      <End Role="ois_okulyonetim" EntitySet="ois_okulyonetim" />
+      <End Role="ois_ders" EntitySet="ois_ders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ois_ogrenciders_ois_ogrenci" Association="Self.FK_ois_ogrenciders_ois_ogrenci">
+      <End Role="ois_ogrenci" EntitySet="ois_ogrenci" />
+      <End Role="ois_ogrenciders" EntitySet="ois_ogrenciders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

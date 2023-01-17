@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Okul_Idare_Sistemi.Models.Ders>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><font color=blue>DERS SAYFASI</font></h1>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Ders" asp-action="Create">Ders Ekleme</a>
+
+
+<div class="main-div">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kredisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OkulYonetim.AdSoyad)
+                </th>
+               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kredisi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OkulYonetim.AdSoyad)
+                    </td>
+
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sil</a> |
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id">Dersi Güncelle</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

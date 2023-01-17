@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Okul_Idare_Sistemi.Models.OkulYonetim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><font color=green>PERSONEL SAYFASI</font></h1>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Yonetim" asp-action="Create">Personel İşlemleri</a>
+
+
+<div class="main-div">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdSoyad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gorevi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YonetimTip)
+                </th>
+               
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdSoyad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gorevi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YonetimTip)
+                    </td>
+                                      
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sil</a> |
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id">Personeli Güncelle</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
